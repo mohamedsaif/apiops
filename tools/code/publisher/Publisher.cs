@@ -1021,7 +1021,16 @@ internal class Publisher : BackgroundService
         var apiSpecificationFile = ApiSpecification.TryFindFile(apiDirectory)
             ?? throw new InvalidOperationException($"Could not find API specification file for operation policy {file.Path}. Specification file is required to get the operation name.");
 
-        var apiOperationDisplayName = file.ApiOperationDirectory.ApiOperationDisplayName;
+        // var apiOperationDisplayName = file.ApiOperationDirectory.ApiOperationDisplayName;
+        var apiOperationDisplayNameTmp = file.ApiOperationDirectory.ApiOperationDisplayName.ToString();
+        if(apiOperationDisplayNameTmp.Contains("&#47;"))
+        {
+            apiOperationDisplayNameTmp = apiOperationDisplayNameTmp.Replace("&#47;", "/");
+            logger.LogWarning("API Operation Display Name contains '&#47;' characters sequence as per Extractor. Replacing '&#47;' with '/' here to let the Display Name be converted back to its original value (before Extractor).");
+            logger.LogWarning("Please consider removing special characters (/) from the API Operation Display Name from your API, if that causes any issue in extractor or publisher");
+        }
+        var apiOperationDisplayName = ApiOperationDisplayName.From(apiOperationDisplayNameTmp);
+   
         var apiOperationName = await ApiSpecification.TryFindApiOperationName(apiSpecificationFile, apiOperationDisplayName) ?? throw new InvalidOperationException($"Could not find operation with display name {apiOperationDisplayName} in specification file {apiSpecificationFile.Path}.");
         var apiInformationFile = ApiInformationFile.From(apiDirectory);
         var apiName = Api.GetNameFromFile(apiInformationFile);
@@ -1046,7 +1055,16 @@ internal class Publisher : BackgroundService
             return;
         }
 
-        var apiOperationDisplayName = file.ApiOperationDirectory.ApiOperationDisplayName;
+        // var apiOperationDisplayName = file.ApiOperationDirectory.ApiOperationDisplayName;
+        var apiOperationDisplayNameTmp = file.ApiOperationDirectory.ApiOperationDisplayName.ToString();
+        if(apiOperationDisplayNameTmp.Contains("&#47;"))
+        {
+            apiOperationDisplayNameTmp = apiOperationDisplayNameTmp.Replace("&#47;", "/");
+            logger.LogWarning("API Operation Display Name contains '&#47;' characters sequence as per Extractor. Replacing '&#47;' with '/' here to let the Display Name be converted back to its original value (before Extractor).");
+            logger.LogWarning("Please consider removing special characters (/) from the API Operation Display Name from your API, if that causes any issue in extractor or publisher");
+        }
+        var apiOperationDisplayName = ApiOperationDisplayName.From(apiOperationDisplayNameTmp);
+   
         var apiOperationName = await ApiSpecification.TryFindApiOperationName(apiSpecificationFile, apiOperationDisplayName);
         if (apiOperationName is null)
         {

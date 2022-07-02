@@ -480,7 +480,17 @@ internal class Extractor : BackgroundService
             var apiRevision = ApiRevision.From(api.Properties.ApiRevision);
             var apiDirectory = ApiDirectory.From(apisDirectory, apiDisplayName, apiVersion, apiRevision);
             var apiOperationsDirectory = ApiOperationsDirectory.From(apiDirectory);
-            var apiOperationDisplayName = ApiOperationDisplayName.From(apiOperation.Properties.DisplayName);
+            // var apiOperationDisplayName = ApiOperationDisplayName.From(apiOperation.Properties.DisplayName);  
+            var apiOperationDisplayNameTmp = apiOperation.Properties.DisplayName;
+            if(apiOperationDisplayNameTmp.Contains("/"))
+            {
+                apiOperationDisplayNameTmp = apiOperationDisplayNameTmp.Replace("/", "&#47;");
+                logger.LogWarning("API Operation Display Name contains '/' character(s). Replaced '/' with '&#47;' to avoid file path issue while saving operation (OverwriteWithText) on system (Unix/Linux only).");
+                logger.LogWarning("'&#47;' in API Operation Display Name will be converted back at time of Publishing. API Operation : {0} :: API : {1}", apiOperation.Name, api.Name);
+                logger.LogWarning("Please feel free to remove any '/' (or special) character if that causes any issue on extractor/publisher operations");
+            }
+            
+            var apiOperationDisplayName = ApiOperationDisplayName.From(apiOperationDisplayNameTmp);
             var apiOperationDirectory = ApiOperationDirectory.From(apiOperationsDirectory, apiOperationDisplayName);
             var file = ApiOperationPolicyFile.From(apiOperationDirectory);
 
