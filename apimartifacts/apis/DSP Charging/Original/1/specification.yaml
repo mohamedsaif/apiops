@@ -1,0 +1,133 @@
+openapi: 3.0.1
+info:
+  title: DSP Charging
+  description: Two step debit flow includes cancel and separate reserve logic
+  contact:
+    name: admin
+    url: http://www.telenity.com/
+    email: admin@telenity.com
+  version: '1.0'
+servers:
+  - url: https://apis.mobivisions.com/dsp/charging
+paths:
+  '/topup/{apikey}/{msisdn}':
+    post:
+      tags:
+        - topupPOST_apikeymsisdn_
+      summary: topupPOST_apikeymsisdn_
+      description: topupPOST_apikeymsisdn_
+      operationId: topupPOST_apikeymsisdn_
+      parameters:
+        - name: apikey
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: msisdn
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: JSON syntax validation failed
+        '403':
+          description: Access restricted to this IP
+        '413':
+          description: Content too large
+        '417':
+          description: Cache key should be set as a property prior to execution of this component
+        '500':
+          description: Fault raised
+        '503':
+          description: SLA violation
+  /topupnotify:
+    put:
+      tags:
+        - topupnotifyPUT_topupnotify_
+      summary: topupnotifyPUT_topupnotify_
+      description: topupnotifyPUT_topupnotify_
+      operationId: topupnotifyPUT_topupnotify_
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: JSON syntax validation failed
+        '403':
+          description: Access restricted to this IP
+        '413':
+          description: Content too large
+        '417':
+          description: Cache key should be set as a property prior to execution of this component
+        '500':
+          description: Fault raised
+        '503':
+          description: SLA violation
+  '/chargeAmountmock/{serviceId}':
+    put:
+      tags:
+        - chargeAmountmockPUT_serviceId_
+      summary: chargeAmountmockPUT_serviceId_
+      description: chargeAmountmockPUT_serviceId_
+      operationId: chargeAmountmockPUT_serviceId_
+      parameters:
+        - name: serviceId
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: JSON syntax validation failed
+        '403':
+          description: Access restricted to this IP
+        '413':
+          description: Content too large
+        '417':
+          description: Cache key should be set as a property prior to execution of this component
+        '500':
+          description: Fault raised
+        '503':
+          description: SLA violation
+  /charge:
+    put:
+      tags:
+        - chargePUT_charge_
+      summary: chargePUT_charge_
+      description: chargePUT_charge_
+      operationId: chargePUT_charge_
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: JSON syntax validation failed
+        '403':
+          description: Access restricted to this IP
+        '413':
+          description: Content too large
+        '417':
+          description: Cache key should be set as a property prior to execution of this component
+        '500':
+          description: Fault raised
+        '503':
+          description: SLA violation
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

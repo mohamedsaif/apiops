@@ -1,0 +1,14 @@
+{
+  "name": "dsp-partnerapi",
+  "properties": {
+    "path": "dsp/partner",
+    "displayName": "DSP PartnerAPI",
+    "apiRevision": "1",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://54.171.89.141/vfgh/gw/partner/v1",
+    "subscriptionRequired": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "iot-gateway-orchestrator",
+  "properties": {
+    "path": "iot-gateway/orch",
+    "displayName": "IoT Gateway Orchestrator",
+    "apiRevision": "1",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "http://iot-gateway-orch.aks.az.mohamedsaif.com",
+    "subscriptionRequired": true
+  }
+}

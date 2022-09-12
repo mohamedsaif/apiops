@@ -1,0 +1,23 @@
+[
+  {
+    "name": "basic-calculator"
+  },
+  {
+    "name": "color-api"
+  },
+  {
+    "name": "echo-api"
+  },
+  {
+    "name": "etisalat-api"
+  },
+  {
+    "name": "iot-gateway-orchestrator"
+  },
+  {
+    "name": "star-wars"
+  },
+  {
+    "name": "star-wars-v2"
+  }
+]

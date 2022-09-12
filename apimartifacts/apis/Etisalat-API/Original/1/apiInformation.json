@@ -1,0 +1,15 @@
+{
+  "name": "etisalat-api",
+  "properties": {
+    "path": "digital2020",
+    "displayName": "Etisalat-API",
+    "apiRevision": "1",
+    "description": "Mocked APIS",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://apis.mobivisions.com/digital2020",
+    "subscriptionRequired": true
+  }
+}

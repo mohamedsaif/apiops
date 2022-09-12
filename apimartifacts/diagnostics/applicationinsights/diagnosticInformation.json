@@ -1,0 +1,37 @@
+{
+  "name": "applicationinsights",
+  "properties": {
+    "loggerId": "/subscriptions/d51d943c-cd99-4d72-ab4c-b212f7a204c0/resourceGroups/aks-weu/providers/Microsoft.ApiManagement/service/apim-external-msft-weu/loggers/aks-weu-ai",
+    "alwaysLog": "allErrors",
+    "backend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "frontend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "httpCorrelationProtocol": "Legacy",
+    "logClientIp": true,
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "fixed"
+    }
+  }
+}

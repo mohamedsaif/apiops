@@ -1,0 +1,46 @@
+openapi: 3.0.1
+info:
+  title: DSP PartnerAPI
+  contact:
+    name: admin
+    url: http://www.telenity.com/
+    email: admin@telenity.com
+  version: '1.0'
+servers:
+  - url: https://apis.mobivisions.com/dsp/partner
+paths:
+  /offers:
+    get:
+      tags:
+        - offersGET_offers_
+      summary: offersGET_offers_
+      description: offersGET_offers_
+      operationId: offersGET_offers_
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: JSON syntax validation failed
+        '403':
+          description: Access restricted to this IP
+        '413':
+          description: Content too large
+        '417':
+          description: Cache key should be set as a property prior to execution of this component
+        '500':
+          description: Fault raised
+        '503':
+          description: SLA violation
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

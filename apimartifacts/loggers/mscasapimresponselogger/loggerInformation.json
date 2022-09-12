@@ -1,0 +1,11 @@
+{
+  "name": "mscasapimresponselogger",
+  "properties": {
+    "isBuffered": true,
+    "loggerType": "azureEventHub",
+    "credentials": {
+      "name": "mscasapimresponselogger",
+      "connectionString": "{{Logger-Credentials--62bd5260463461149c02f5c8}}"
+    }
+  }
+}
