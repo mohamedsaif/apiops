@@ -1,0 +1,15 @@
+{
+  "name": "dsp-charging",
+  "properties": {
+    "path": "dsp/charging",
+    "displayName": "DSP Charging",
+    "apiRevision": "1",
+    "description": "Two step debit flow includes cancel and separate reserve logic",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "http://54.171.89.141/vfgh/gw/charging/v1",
+    "subscriptionRequired": true
+  }
+}

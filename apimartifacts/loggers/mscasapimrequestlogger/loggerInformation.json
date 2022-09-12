@@ -1,0 +1,11 @@
+{
+  "name": "mscasapimrequestlogger",
+  "properties": {
+    "isBuffered": true,
+    "loggerType": "azureEventHub",
+    "credentials": {
+      "name": "mscasapimrequestlogger",
+      "connectionString": "{{Logger-Credentials--62bd525c463461149c02f5c5}}"
+    }
+  }
+}

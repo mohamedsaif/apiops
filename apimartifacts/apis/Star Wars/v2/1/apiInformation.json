@@ -1,0 +1,16 @@
+{
+  "name": "star-wars-v2;rev=1",
+  "properties": {
+    "path": "sw",
+    "displayName": "Star Wars",
+    "apiRevision": "1",
+    "apiVersion": "v2",
+    "apiVersionSetId": "/subscriptions/d51d943c-cd99-4d72-ab4c-b212f7a204c0/resourceGroups/aks-weu/providers/Microsoft.ApiManagement/service/apim-external-msft-weu/apiVersionSets/62a18c1e218dc827e537f8d8",
+    "description": "",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://swapi.dev/api",
+    "subscriptionRequired": true
+  }
+}

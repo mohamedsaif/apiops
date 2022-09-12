@@ -1,0 +1,11 @@
+{
+  "name": "dev-tier",
+  "properties": {
+    "displayName": "Dev Tier",
+    "approvalRequired": false,
+    "description": "Subscribers will be able to limited calls/minute for the avaialbe APIs.\nThere is also a capped usage at 1000 calls per week.",
+    "state": "published",
+    "subscriptionRequired": true,
+    "subscriptionsLimit": 1
+  }
+}

@@ -1,0 +1,52 @@
+openapi: 3.0.1
+info:
+  title: IoT Gateway Orchestrator
+  version: '1.0'
+servers:
+  - url: https://apis.mobivisions.com/iot-gateway/orch
+paths:
+  /api/GatewayOrchestrator/version:
+    get:
+      tags:
+        - GatewayOrchestrator
+      summary: /api/GatewayOrchestrator/version - GET
+      operationId: get-api-gatewayorchestrator-version
+      responses:
+        '200':
+          description: Success
+  '/api/GatewayOrchestrator/{targetPlatform}':
+    post:
+      tags:
+        - GatewayOrchestrator
+      summary: '/api/GatewayOrchestrator/{targetPlatform} - POST'
+      operationId: post-api-gatewayorchestrator-targetplatform
+      parameters:
+        - name: targetPlatform
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema: { }
+          text/json:
+            schema: { }
+          application/*+json:
+            schema: { }
+      responses:
+        '200':
+          description: Success
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

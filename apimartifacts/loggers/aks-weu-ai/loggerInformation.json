@@ -1,0 +1,11 @@
+{
+  "name": "aks-weu-ai",
+  "properties": {
+    "isBuffered": true,
+    "loggerType": "applicationInsights",
+    "resourceId": "/subscriptions/d51d943c-cd99-4d72-ab4c-b212f7a204c0/resourceGroups/aks-weu/providers/microsoft.insights/components/aks-weu-ai",
+    "credentials": {
+      "instrumentationKey": "{{Logger-Credentials--62a18ef4463461165cfc0d2b}}"
+    }
+  }
+}

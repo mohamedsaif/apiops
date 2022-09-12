@@ -1,0 +1,14 @@
+{
+  "name": "color-api-d2020",
+  "properties": {
+    "path": "color-d2020",
+    "displayName": "Color API D2020",
+    "apiRevision": "1",
+    "isCurrent": true,
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://markcolorapi.azurewebsites.net/",
+    "subscriptionRequired": true
+  }
+}
